@@ -7,6 +7,7 @@
 
 .player {
   position: absolute;
+  z-index: 2;
   background-color: rgb(90, 175, 90);
 }
 
@@ -17,5 +18,11 @@
 
 .box {
   position: absolute;
-  background-color: rgb(163, 91, 32)
+  z-index: 1;
+  background-color: rgb(163, 91, 32);
+}
+
+.target {
+  position: absolute;
+  background-color: rgb(126, 36, 211);
 }
