@@ -1,0 +1,45 @@
+.levels-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.level-button {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #8ecae6;
+  border: 2px solid #219ebc;
+}
+
+.level-button:hover {
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.star-rating {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.c-star {
+  width: var(--size, 32px);
+  height: var(--size, 32px);
+  fill: lightgrey;
+  transform: scale(0.9);
+}
+
+.active {
+  fill: #fed94b;
+}

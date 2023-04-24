@@ -1,0 +1,54 @@
+.board {
+  display: flex;
+  gap: 50px;
+}
+
+.board-game {
+  width: 500px;
+  height: 500px;
+  background-color: rgb(221, 221, 221);
+  background-image: url('../../assets/ground_06.png');
+  position: relative;
+}
+
+.player {
+  position: absolute;
+  z-index: 2;
+  background-image: url('../../assets/player_05.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.wall {
+  position: absolute;
+  background-image: url('../../assets/wall_05.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.box {
+  position: absolute;
+  z-index: 1;
+  background-image: url('../../assets/box_07.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.target {
+  position: absolute;
+  background-image: url('../../assets/target_27.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.score-bord {
+  border: 2px solid black;
+  padding: 10px 50px;
+  border-radius: 10px;
+}
+
+.actions-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}

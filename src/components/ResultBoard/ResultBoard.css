@@ -1,0 +1,18 @@
+.result-board-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+button {
+  cursor: pointer;
+  padding: 10px;
+}

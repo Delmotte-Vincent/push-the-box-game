@@ -1,28 +1,14 @@
-.board {
-  width: 500px;
-  height: 500px;
-  background-color: rgb(221, 221, 221);
-  position: relative;
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.player {
-  position: absolute;
-  z-index: 2;
-  background-color: rgb(90, 175, 90);
-}
-
-.wall {
-  position: absolute;
-  background-color: rgb(75, 75, 75);
-}
-
-.box {
-  position: absolute;
-  z-index: 1;
-  background-color: rgb(163, 91, 32);
-}
-
-.target {
-  position: absolute;
-  background-color: rgb(126, 36, 211);
+.select-level-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
