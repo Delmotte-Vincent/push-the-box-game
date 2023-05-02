@@ -1,12 +1,14 @@
 import { useState, useRef, useEffect } from 'react';
-import './BoardGame.css';
 import usePushTheBox from '../../hooks/usePushTheBox';
 import ResultBoard from '../ResultBoard/ResultBoard';
+import useLocalStorage from '../../hooks/useLocalStorage';
+import './BoardGame.css';
 
-export default function BoardGame({ game, nextLevel, openLevelsSelection }) {
-  const [boardDimension, setBoardDimension] = useState(0);
-
+export default function BoardGame({ levels, setLevels, game, nextLevel, openLevelsSelection }) {
   const pushTheBox = usePushTheBox(game);
+  const storage = useLocalStorage();
+
+  const [boardDimension, setBoardDimension] = useState(0);
 
   const boardRef = useRef(null);
 
@@ -17,6 +19,15 @@ export default function BoardGame({ game, nextLevel, openLevelsSelection }) {
   useEffect(() => {
     if (!pushTheBox.isWin) {
       document.addEventListener('keydown', onKeyDown);
+    } else {
+      const copy = levels.map((level) => {
+        if (level.id === game.id) {
+          return { ...level, completed: true };
+        }
+        return level;
+      });
+      storage.setLocalStorageLevels(copy);
+      setLevels(copy);
     }
     return () => document.removeEventListener('keydown', onKeyDown);
   }, [pushTheBox.playerPosition, pushTheBox.isWin]);
@@ -131,8 +142,8 @@ export default function BoardGame({ game, nextLevel, openLevelsSelection }) {
             <p>Mouvements : {pushTheBox.moveCounter}</p>
             <p>Boxes : 0 / {pushTheBox.boxes.length} </p>
             <div className="actions-container">
-              <button>Rejouer</button>
-              <button>Niveaux</button>
+              <button onClick={pushTheBox.resetGame}>Rejouer</button>
+              <button onClick={openLevelsSelection}>Niveaux</button>
             </div>
           </div>
         </div>

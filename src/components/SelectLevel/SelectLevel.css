@@ -14,8 +14,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #8ecae6;
+  background-color: #eeeeee;
   border: 2px solid #219ebc;
+}
+
+.completed {
+  background-color: #8ecae6;
 }
 
 .level-button:hover {
